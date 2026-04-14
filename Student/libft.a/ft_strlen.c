@@ -6,16 +6,18 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:48:10 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/13 12:59:23 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/14 17:35:01 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-    int i;
+#include "libft.h"
 
-    i = 0;
-    while(str[i] != '\0')
-        i++;
-    return (i);
+size_t	ft_strlen(char *str)
+{
+	size_t i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }

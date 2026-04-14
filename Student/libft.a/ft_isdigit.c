@@ -6,25 +6,22 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:20 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/13 15:44:19 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/14 17:58:32 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(char *str)
+int	ft_isdigit(int c)
 {
-    int i;
-
-    i = 0;
-    if (str[i] == '\0')
-        return (0);
-    while (str[i] != '\0')
-    {
-        if (str[i] >= '0' && str[i] <= '9')
-            i++;
-        else
-            return (0);
-    }
-    return (1);
+	if (c == '\0')
+		return (0);
+	while (c != '\0')
+	{
+		if (c >= '0' && c <= '9')
+			c++;
+		else
+			return (0);
+	}
+	return (1);
 }
 
 /*
@@ -32,14 +29,12 @@ int ft_isdigit(char *str)
 
 int	main(void)
 {
-	printf("%d\n", ft_isdigit("OBI"));
-	printf("%d\n", ft_isdigit("wan"));
-	printf("%d\n", ft_isdigit("42"));
-	printf("%d\n", ft_isdigit(""));
-	printf("%d\n", ft_isdigit("42c"));
-	printf("%d\n", ft_isdigit("42."));
-	printf("%d\n", ft_isdigit("c42"));
-	printf("%d\n", ft_isdigit(".42"));
+	printf("%d\n", ft_isalnum('O'));
+	printf("%d\n", ft_isalnum('w'));
+	printf("%d\n", ft_isalnum('4'));
+	printf("%d\n", ft_isalnum(' '));
+	printf("%d\n", ft_isalnum('@'));
+	printf("%d\n", ft_isalnum('	'));
 	return (0);
 }
 */

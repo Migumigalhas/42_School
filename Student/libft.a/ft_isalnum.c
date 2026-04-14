@@ -6,24 +6,23 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:15 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/13 15:59:27 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/14 17:56:34 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum(char *str)
+int	ft_isalnum(int c)
 {
-    int i = 0;
-
-    if (str[i] == '\0')
-        return (0);
-    while (str[i] != '\0')
-    {
-        if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z') || (str[i] >= '0' && str[i] <= '9'))
-            i++;
-        else
-            return (0);
-    }
-    return (1);
+	if (c == '\0')
+		return (0);
+	if (c != '\0')
+	{
+		if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
+			|| (c >= '0' && c <= '9'))
+			c++;
+		else
+			return (0);
+	}
+	return (1);
 }
 
 /*
@@ -31,14 +30,12 @@ int ft_isalnum(char *str)
 
 int	main(void)
 {
-	printf("%d\n", ft_isalnum("OBI"));
-	printf("%d\n", ft_isalnum("wan"));
-	printf("%d\n", ft_isalnum("42"));
-	printf("%d\n", ft_isalnum(""));
-	printf("%d\n", ft_isalnum("42c"));
-	printf("%d\n", ft_isalnum("42."));
-	printf("%d\n", ft_isalnum("c42"));
-	printf("%d\n", ft_isalnum(".42"));
+	printf("%d\n", ft_isalnum('O'));
+	printf("%d\n", ft_isalnum('w'));
+	printf("%d\n", ft_isalnum('4'));
+	printf("%d\n", ft_isalnum(' '));
+	printf("%d\n", ft_isalnum('@'));
+	printf("%d\n", ft_isalnum('	'));
 	return (0);
 }
 */

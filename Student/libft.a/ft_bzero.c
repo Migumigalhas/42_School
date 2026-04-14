@@ -6,7 +6,35 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:13 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/13 12:49:32 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/14 17:35:52 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+
+void	ft_bzero(void *s, size_t n)
+{
+	int				i;
+	unsigned char	*temp;
+
+	i = 0;
+	temp = (unsigned char *)s;
+	while (i < n)
+	{
+		temp[i] = 0;
+		i++;
+	}
+}
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char	s[] = "KJDFDSNFDSN";
+
+	ft_bzero(s, 11);
+	printf("Resultado --> %s", s);
+	return (0);
+}
+*/
