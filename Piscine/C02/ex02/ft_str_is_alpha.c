@@ -1,0 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: miggomes <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/28 17:00:30 by miggomes          #+#    #+#             */
+/*   Updated: 2026/01/28 17:00:33 by miggomes         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int	ft_str_is_alpha(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if ((str[i] >= 65 && str[i] <= 90) || (str[i] >= 97 && str[i] <= 122))
+			i++;
+		else
+			return (0);
+	}
+	return (1);
+}
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("%d\n", ft_str_is_alpha("OBI"));
+	printf("%d\n", ft_str_is_alpha("wan"));
+	printf("%d\n", ft_str_is_alpha("42"));
+	return (0);
+}
+*/
