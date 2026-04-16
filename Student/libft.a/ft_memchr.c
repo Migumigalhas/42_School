@@ -6,7 +6,10 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:50:31 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/13 12:50:57 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/16 16:37:48 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+void	*memchr(const void *s, int c, size_t n)

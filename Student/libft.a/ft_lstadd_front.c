@@ -6,7 +6,10 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:26 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/13 12:49:32 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/16 16:36:05 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+void	ft_lstadd_front(t_list **lst, t_list *new)

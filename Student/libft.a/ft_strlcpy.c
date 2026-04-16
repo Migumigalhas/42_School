@@ -6,11 +6,11 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:48:07 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/16 13:43:51 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/16 16:35:00 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 size_t	strlcpy(char *dest, const char *src, size_t size)
 {

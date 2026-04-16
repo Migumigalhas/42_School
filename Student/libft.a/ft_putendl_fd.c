@@ -6,7 +6,10 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:48 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/13 12:49:32 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/16 16:37:37 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+void	ft_putendl_fd(char *s, int fd)

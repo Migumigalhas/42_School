@@ -6,7 +6,10 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:48:21 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/14 17:41:49 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/16 16:37:13 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+char	*ft_substr(const char *s, unsigned int start, size_t len)

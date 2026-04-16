@@ -6,9 +6,11 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:48:12 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/14 17:35:02 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/16 16:34:50 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {

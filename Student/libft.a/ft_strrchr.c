@@ -6,7 +6,10 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:48:18 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/13 12:49:32 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/16 16:37:17 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
+
+char	*strrchr(const char *s, int c)
