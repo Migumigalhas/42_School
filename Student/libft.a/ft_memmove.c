@@ -6,10 +6,10 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:43 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/16 16:37:43 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/17 14:34:15 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)

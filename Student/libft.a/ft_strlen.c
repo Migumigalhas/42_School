@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:48:10 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/16 16:04:30 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/17 14:39:22 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,14 @@ size_t	ft_strlen(char *str)
 		i++;
 	return (i);
 }
+
+/* 
+#include <stdio.h>
+
+int	main(void)
+{
+	char	str[] = "Darth Vader";
+	printf("--> %zu\n", ft_strlen(str));
+	return (0);
+}
+*/

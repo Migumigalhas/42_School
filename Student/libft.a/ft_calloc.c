@@ -6,11 +6,11 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:14 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/14 18:17:56 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/17 13:01:21 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*calloc(size_t number, size_t size)
 {

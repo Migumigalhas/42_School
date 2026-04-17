@@ -6,13 +6,13 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:48:07 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/16 16:35:00 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/17 14:35:00 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	int	i;
 	
@@ -33,7 +33,7 @@ int	main(void)
 {
 	char src[] = "Ola eu sou o Miguel";
 	char dest [] = "";
-	strlcpy(dest, src, 10);
+	ft_strlcpy(dest, src, 10);
 	printf("--> %s", dest);
 	return (0);
 }

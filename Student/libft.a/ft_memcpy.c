@@ -6,10 +6,10 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:41 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/16 16:37:45 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/17 14:34:11 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
