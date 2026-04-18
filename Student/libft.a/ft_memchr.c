@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:50:31 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/17 15:01:02 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/18 15:00:20 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,45 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t i;
-	const char *str;
+	size_t				i;
+	const unsigned char	*str;
 
 	i = 0;
-	str = (const char *)s;
+	str = (const unsigned char *)s;
 	while (i < n)
 	{
-		if (str[i] == (const char)c)
+		if (str[i] == (unsigned char)c)
 			return ((void *)&str[i]);
 		i++;
 	}
 	return (NULL);
 }
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char str[] = "Ola nha mano";
+	char *temp;
+
+	temp = ft_memchr(str, 'm', 13);
+	if (temp)
+		printf("Found: %s\n", temp);
+	else
+		printf("Not Found\n");
+
+	temp = ft_memchr(str, ' ', 67);
+	if (temp)
+		printf("Found: %s\n", temp);
+	else
+		printf("Not Found\n");
+
+	temp = ft_memchr(str, 'W', 67);
+	if (temp)
+		printf("Found: %s\n", temp);
+	else
+		printf("Not Found\n");
+	return (0);
+}
+*/
