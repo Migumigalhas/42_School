@@ -6,10 +6,35 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:45 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/17 14:34:18 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/20 17:30:05 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
+{
+	size_t i;
+	unsigned char *ptr;
+	
+	ptr = (unsigned char *)b;
+	i = 0;
+	while (i < len)
+	{
+		ptr[i] = c;
+		i++;
+	}
+	return (b);
+}
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char str[] = "OLA, EU SOU O MIGUEL";
+	ft_memset(str, 'W', 21);
+	printf("--> %s\n", str);
+	return (0);
+}
+*/
