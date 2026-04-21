@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:43 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/18 16:49:10 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/20 18:16:48 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	return (dst);
 }
 
-/* 
+/*
 #include <stdio.h>
 
 int	main(void)
 {
-	char dest[13];
-	char src[] = "Diddy, pl no";
+	char	dest[13];
+	char	src[] = "Diddy, pl no";
 
 	ft_memmove(dest, src, 30);
 	printf("--> %s\n", dest);

@@ -6,13 +6,13 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:14 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/17 13:01:21 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/21 13:23:19 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*calloc(size_t number, size_t size)
+void	*ft_calloc(size_t number, size_t size)
 {
 	unsigned char *tmp;
 

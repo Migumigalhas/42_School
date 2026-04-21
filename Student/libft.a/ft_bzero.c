@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:13 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/17 13:01:16 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/21 13:21:37 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	int				i;
+	size_t				i;
 	unsigned char	*temp;
 
 	i = 0;
