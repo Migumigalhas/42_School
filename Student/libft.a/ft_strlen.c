@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:48:10 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/21 11:17:20 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/22 16:52:19 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *str)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -22,12 +22,13 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-/* 
+/*
 #include <stdio.h>
 
 int	main(void)
 {
 	char	str[] = "Darth Vader";
+
 	printf("--> %zu\n", ft_strlen(str));
 	return (0);
 }
