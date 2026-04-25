@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:23 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/23 16:17:16 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/25 11:45:57 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_itoa(int n)
 	char	*str;
 	int		len;
 	long	nb;
-	int	i;
+	int		i;
 
 	nb = n;
 	len = ft_intlen(n);

@@ -6,10 +6,12 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:31 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/16 16:47:11 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/25 11:51:32 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
+
+

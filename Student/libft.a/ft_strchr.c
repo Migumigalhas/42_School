@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:54 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/17 14:34:40 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/25 11:41:28 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (NULL);
 }
-
 
 /* #include <stdio.h>
 

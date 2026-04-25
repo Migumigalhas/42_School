@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:43 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/20 18:16:48 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/25 11:49:30 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	else
 	{
-		i = 0;
-		while (i < len)
-		{
+		i = -1;
+		while (i++ < len)
 			dest[i] = source[i];
-			i++;
-		}
 	}
 	return (dst);
 }

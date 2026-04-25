@@ -6,10 +6,12 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:35 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/16 16:47:08 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/25 11:51:35 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void (*f)(void *), void (*del)(void *))
+
+

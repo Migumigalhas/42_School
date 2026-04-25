@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:49 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/23 15:12:26 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/25 11:46:48 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	int c;
+	int	c;
 
 	if (n == "-2147483648")
 		write(fd, "-2147483648", 11);
@@ -39,10 +39,10 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 }
 
-/* 
+/*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
 	ft_putnbr_fd(-4, 1);
 	printf("\n");
