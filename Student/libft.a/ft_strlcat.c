@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:48:05 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/16 16:35:04 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/27 16:40:22 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	while (dest[i] != '\0')
 		i++;
 	j = 0;
-	while (src[j] != '\0' && i < size - 1)
+	while (src[j] != '\0' && i < (size - 1) && size > 0)
 	{
 		dest[i] = src[j];
 		j++;
 		i++;
 	}
 	dest[i] = '\0';
-	return (i);
+	return (i + ft_strlen(src + j));
 }
 
 /*

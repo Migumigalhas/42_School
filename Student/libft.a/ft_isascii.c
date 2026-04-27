@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:18 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/17 13:02:11 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/27 16:49:45 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 122)
+	if (c >= 0 && c <= 127)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
 
 /*

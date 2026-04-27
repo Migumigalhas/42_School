@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:48:18 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/18 15:46:15 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/27 16:47:53 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	last = NULL;
 	if (c == '\0')
-		return ((char *)&s[strlen(s)]);
+		return ((char *)&s[ft_strlen(s)]);
 	while (s[i] != '\0')
 	{
 		if (s[i] == (char)c)
