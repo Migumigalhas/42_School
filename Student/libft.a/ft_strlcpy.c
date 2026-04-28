@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:48:07 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/27 16:40:39 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/28 15:38:34 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,21 @@
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;
+	size_t	len;
 
+	len = 0;
+	while (src[len] != '\0')
+		len++;
 	i = 0;
-	while (src[i] != '\0' && i < size)
+	if (size == 0)
+		return (len);
+	while (src[i] != '\0' && i < size - 1)
 	{
 		dest[i] = src[i];
 		i++;
 	}
 	dest[i] = '\0';
-	return (i);
+	return (len);
 }
 
 /*

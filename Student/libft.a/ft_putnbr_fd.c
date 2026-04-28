@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:49 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/27 16:26:34 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/28 15:30:09 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_putnbr_fd(int n, int fd)
 		else
 		{
 			c = n + 48;
-			write(1, &c, 1);
+			write(fd, &c, 1);
 		}
 	}
 }

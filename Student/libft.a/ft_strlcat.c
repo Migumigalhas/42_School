@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:48:05 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/27 16:40:22 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/04/28 16:11:30 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,23 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
+	size_t	len;
 
 	i = 0;
-	while (dest[i] != '\0')
-		i++;
 	j = 0;
-	while (src[j] != '\0' && i < (size - 1) && size > 0)
-	{
-		dest[i] = src[j];
-		j++;
+	while (dest[i] != '\0' && i < size)
 		i++;
+	len = i;
+	if (len == size)
+		return (size + ft_strlen(src));
+	while (src[j] != '\0' && (len + j + 1 < size))
+	{
+		dest[len + j] = src[j];
+		j++;
 	}
-	dest[i] = '\0';
-	return (i + ft_strlen(src + j));
+	if (len + j < size)
+		dest[len + j] = '\0';
+	return (len + ft_strlen(src));
 }
 
 /*
@@ -36,8 +40,9 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 
 int	main(void)
 {
-	char dest[20] = "Ola eu";
-	char src[] = " sou o Miguel";
+	char	dest[20] = "Ola eu";
+	char	src[] = " sou o Miguel";
+
 	strlcat(dest, src, 18);
 	printf("--> %s", dest);
 	return (0);
