@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:14 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/27 16:15:30 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/05/04 16:14:30 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_calloc(size_t number, size_t size)
 {
 	unsigned char	*tmp;
 
+	if (size != 0 && number > ((size_t)-1) / size)
+		return (NULL);
 	tmp = malloc(size * number);
 	if (!tmp)
 		return (NULL);

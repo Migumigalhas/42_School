@@ -6,13 +6,13 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:47:23 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/27 16:15:44 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/05/04 16:14:41 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_intlen(int i)
+int	ft_intlen(long i)
 {
 	int	j;
 

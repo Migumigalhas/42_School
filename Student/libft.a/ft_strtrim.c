@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:48:19 by miggomes          #+#    #+#             */
-/*   Updated: 2026/04/27 16:16:37 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/05/04 16:15:53 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,15 @@ char	*ft_strtrim(const char *s1, const char *set)
 	if (!s1 || !set)
 		return (NULL);
 	i = 0;
-	while (ft_set(s1[i], set))
+	while (s1[i] && ft_set(s1[i], set))
 		i++;
 	j = ft_strlen(s1);
-	while (ft_set(s1[j - 1], set))
+	while (j > i && ft_set(s1[j - 1], set))
 		j--;
 	str = malloc(j - i + 1);
 	if (!str)
 		return (NULL);
 	ft_strlcpy(str, s1 + i, j - i + 1);
-	str[j - i] = '\0';
 	return (str);
 }
 
