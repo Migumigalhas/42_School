@@ -6,12 +6,12 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 15:01:02 by miggomes          #+#    #+#             */
-/*   Updated: 2026/05/14 12:39:47 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/05/14 14:11:56 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdarg.h>
 # include <stddef.h>

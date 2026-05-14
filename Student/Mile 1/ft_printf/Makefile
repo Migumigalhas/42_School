@@ -6,13 +6,13 @@
 #    By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/11 14:59:21 by miggomes          #+#    #+#              #
-#    Updated: 2026/05/14 12:54:31 by miggomes         ###   ########.fr        #
+#    Updated: 2026/05/14 14:12:09 by miggomes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # -*- MakeFile
 
-NAME		= libftprintf.a
+NAME		= printf.a
 FUNCTIONS	= ft_printf ft_putchar ft_putstr ft_putnbr \
 				ft_putunsigned ft_puthex ft_putptr
 
@@ -29,7 +29,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 		$(AR) $(NAME) $(OBJS)
 
-%.o: %.c libftprintf.h
+%.o: %.c printf.h
 		$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

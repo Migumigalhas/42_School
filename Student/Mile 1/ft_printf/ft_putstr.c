@@ -6,11 +6,11 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 11:22:45 by miggomes          #+#    #+#             */
-/*   Updated: 2026/05/14 12:34:46 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/05/14 14:12:36 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "printf.h"
 
 int	ft_putstr(char *str)
 {

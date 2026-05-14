@@ -6,11 +6,11 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 11:51:02 by miggomes          #+#    #+#             */
-/*   Updated: 2026/05/14 12:36:16 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/05/14 14:12:31 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "printf.h"
 
 int	ft_putunsigned(unsigned int nb)
 {

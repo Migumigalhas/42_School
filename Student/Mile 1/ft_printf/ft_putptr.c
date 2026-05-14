@@ -6,11 +6,11 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 12:00:29 by miggomes          #+#    #+#             */
-/*   Updated: 2026/05/14 13:06:53 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/05/14 14:12:38 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "printf.h"
 
 static int	fake_puthex(unsigned long nb, char str)
 {

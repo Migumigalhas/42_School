@@ -6,11 +6,11 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 15:03:47 by miggomes          #+#    #+#             */
-/*   Updated: 2026/05/14 13:50:31 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/05/14 14:12:48 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "printf.h"
 
 static int	ft_type(const char str, va_list args)
 {
