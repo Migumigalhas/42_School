@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 15:03:47 by miggomes          #+#    #+#             */
-/*   Updated: 2026/05/14 13:47:46 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/05/14 13:50:31 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	ft_type(const char str, va_list args)
 int	ft_printf(const char *format, ...)
 {
 	int		i;
-	int	count;
+	int		count;
 	va_list	args;
 
 	i = 0;
