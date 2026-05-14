@@ -6,11 +6,11 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 11:19:42 by miggomes          #+#    #+#             */
-/*   Updated: 2026/05/14 14:12:46 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/05/14 14:21:50 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putchar(char c)
 {

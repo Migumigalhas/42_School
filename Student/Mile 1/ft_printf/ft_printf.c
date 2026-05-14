@@ -6,28 +6,28 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 15:03:47 by miggomes          #+#    #+#             */
-/*   Updated: 2026/05/14 14:12:48 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/05/14 14:52:48 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-static int	ft_type(const char str, va_list args)
+static int	ft_type(const char str, va_list *args)
 {
 	if (str == '%')
 		return (ft_putchar('%'));
 	if (str == 'c')
-		return (ft_putchar(va_arg(args, int)));
+		return (ft_putchar(va_arg(*args, int)));
 	if (str == 's')
-		return (ft_putstr(va_arg(args, char *)));
+		return (ft_putstr(va_arg(*args, char *)));
 	if (str == 'd' || str == 'i')
-		return (ft_putnbr(va_arg(args, int)));
+		return (ft_putnbr(va_arg(*args, int)));
 	if (str == 'u')
-		return (ft_putunsigned(va_arg(args, unsigned int)));
+		return (ft_putunsigned(va_arg(*args, unsigned int)));
 	if (str == 'x' || str == 'X')
-		return (ft_puthex(va_arg(args, unsigned int), str));
+		return (ft_puthex(va_arg(*args, unsigned int), str));
 	if (str == 'p')
-		return (ft_putptr(va_arg(args, void *)));
+		return (ft_putptr(va_arg(*args, void *)));
 	return (0);
 }
 
@@ -47,7 +47,8 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			count += ft_type(format[i], args);
+			count += ft_type(format[i], &args);
+			i++;
 		}
 		else
 		{
