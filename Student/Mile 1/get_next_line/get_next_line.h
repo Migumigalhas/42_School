@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/11 15:01:02 by miggomes          #+#    #+#             */
-/*   Updated: 2026/05/14 14:57:47 by miggomes         ###   ########.fr       */
+/*   Created: 2026/05/27 13:15:40 by miggomes          #+#    #+#             */
+/*   Updated: 2026/06/02 15:07:15 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-# include <stdarg.h>
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
 
-int	ft_printf(const char *format, ...);
-int	ft_putchar(char c);
-int	ft_puthex(unsigned int nb, char str);
-int	ft_putnbr(int nb);
-int	ft_putptr(void *ptr);
-int	ft_putstr(char *str);
-int	ft_putunsigned(unsigned int nb);
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+char	*get_next_line(int fd);
+int		ft_strlen(const char *str);
+char	*ft_strchr(const char *s, int c);
+char	*read_and_store(int fd, char *storage);
+char	*ft_strjoin(const char *s1, const char *s2);
+char	*ft_substr(const char *s, unsigned int start, size_t len);
 
 #endif
