@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 13:15:46 by miggomes          #+#    #+#             */
-/*   Updated: 2026/06/02 15:17:05 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/06/11 15:23:06 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,60 +42,96 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		s2 = "";
 	i = 0;
 	j = 0;
+	while (s1[i])
+		i++;
+	while (s2[j])
+		j++;
 	str = malloc(i + j + 1);
 	if (!str)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (s1[i])
-		str[j++] = s1[i++];
-	while (s2[i])
-		str[j++] = s2[i++];
-	str[j] = '\0';
+	while (s1[j])
+		str[i++] = s1[j++];
+	while (*s2)
+		str[i++] = *s2++;
+	str[i] = '\0';
 	return (str);
 }
 
-char	*ft_strdup(const char *s1)
+char	*ft_duplen(const char *s, size_t len)
 {
+	char	*dup;
 	size_t	i;
-	char	*copy;
+	size_t	leng;
 
 	i = 0;
-	copy = malloc(ft_strlen(s1) + 1);
-	if (!copy)
+	if (!s)
 		return (NULL);
-	while (s1[i] != '\0')
+	while (s[i])
+		i++;
+	leng = i;
+	if (len > leng)
+		len = leng;
+	dup = malloc(len + 1);
+	if (!dup)
+		return (NULL);
+	i = 0;
+	while (i < len)
 	{
-		copy[i] = s1[i];
+		dup[i] = s[i];
 		i++;
 	}
-	copy[i] = '\0';
-	return (copy);
+	dup[i] = '\0';
+	return (dup);
 }
 
-char	*read_and_store(int fd, char *storage)
+char	*read_newline(int fd, char *line)
 {
-	char	*buffer;
 	char	*temp;
-	int		read_bytes;
+	int		bytes_read;
+	char	*prev;
 
-	buffer = malloc(BUFFER_SIZE + 1);
-	if (!buffer)
-		return (NULL);
-	if (!storage)
-		storage = ft_substr("", 0, 0);
-	if (!storage)
-		return (free(buffer), NULL);
-	while (!ft_strchr(storage, '\n'))
+	bytes_read = 1;
+	temp = malloc(BUFFER_SIZE + 1);
+	if (!temp)
+		return (free(line), NULL);
+	while (!ft_strchr(line, '\n') && bytes_read != 0)
 	{
-		read_bytes = read(fd, buffer, BUFFER_SIZE);
-		if (read_bytes <= 0)
-			break ;
-		buffer[read_bytes] = '\0';
-		temp = ft_strjoin(storage, buffer);
-		free(storage);
-		storage = temp;
+		bytes_read = read(fd, temp, BUFFER_SIZE);
+		if (bytes_read == -1)
+			return (free(temp), free(line), NULL);
+		temp[bytes_read] = '\0';
+		prev = line;
+		line = ft_strjoin(line, temp);
+		free(prev);
+		if (!line)
+			return (free (temp), NULL);
 	}
-	free(buffer);
-	return (storage);
+	free(temp);
+	return (line);
+}
+
+char	*update(char *stash)
+{
+	int		i;
+	char	*new;
+	int		len;
+
+	i = 0;
+	if (!stash)
+		return (NULL);
+	while (stash[i] && stash[i] != '\n')
+		i++;
+	if (!stash[i] || !stash[i + 1])
+	{
+		free(stash);
+		return (NULL);
+	}
+	len = 0;
+	while (stash[i + 1 + len])
+		len++;
+	new = ft_duplen(stash + i + 1, len);
+	free(stash);
+	return (new);
 }

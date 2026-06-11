@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 13:15:40 by miggomes          #+#    #+#             */
-/*   Updated: 2026/06/02 15:07:15 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/06/11 15:23:33 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@
 # endif
 
 char	*get_next_line(int fd);
-int		ft_strlen(const char *str);
 char	*ft_strchr(const char *s, int c);
-char	*read_and_store(int fd, char *storage);
 char	*ft_strjoin(const char *s1, const char *s2);
-char	*ft_substr(const char *s, unsigned int start, size_t len);
+char	*ft_duplen(const char *s, size_t len);
+char	*read_newline(int fd, char *line);
+char	*update(char *stash);
 
 #endif
