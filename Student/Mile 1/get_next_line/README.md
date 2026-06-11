@@ -93,4 +93,4 @@ Claude (Anthropic) was used during this project for the following:
 
 ## Author
 
--> miggomes
+miggomes
