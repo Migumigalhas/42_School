@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 12:20:24 by miggomes          #+#    #+#             */
-/*   Updated: 2026/06/23 16:09:29 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/06/25 15:57:13 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@
 
 typedef struct s_node
 {
-	int				*value;
+	int				value;
 	struct s_node	*next;
 }					t_node;
 
 typedef struct s_stack
 {
 	t_node			*top;
-	int				*size;
+	int				size;
 }					t_stack;
 
 int					push_swap(int i);
