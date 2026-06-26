@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 15:50:22 by miggomes          #+#    #+#             */
-/*   Updated: 2026/06/25 16:11:54 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/06/26 16:39:06 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,3 +168,189 @@ void	selection_sort(t_stack *a, t_stack *b)
 
 //----------------------------------------------------------------------
 //	Chunk sort - O(n√n) algorithm
+//	Size to not hit /0, just swap if 1 > i+1
+
+void	sort_array(int *array, int size)
+{
+	int	i;
+	int	j;
+	int	temp;
+
+	j = 0;
+	while (j < size - 1)
+	{
+		i = 0;
+		while (i < size - j - 1)
+		{
+			if (array[i] > array[i + 1])
+			{
+				temp = array[i + 1];
+				array[i + 1] = array[i];
+				array[i] = temp;
+			}
+			i++;
+		}
+		j++;
+	}
+}
+
+//	Pass from node to array the values
+
+int	*get_values(t_stack *a)
+{
+	int		*array;
+	t_node	*current;
+	int		i;
+
+	array = malloc(sizeof(int) * a->size);
+	if (!array)
+		return (NULL);
+	current = a->top;
+	i = 0;
+	while (current->next == NULL)
+	{
+		array[i] = current->value;
+		current = current->next;
+		i++;
+	}
+	return (array);
+}
+
+int	find_rank(int *sorted, int size, int value)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		if (sorted[i] == value)
+			return (i);
+		i++;
+	}
+	return (-1);
+}
+
+//	We pass the values from node to the array *sorted
+//
+//	read current->value (right side) → e.g. 67
+//	find its rank in sorted array → find_rank returns 2
+//	write 2 back into current->value (left side)
+//	BEFORE: [67] → [3] → [87] → [23]
+//	AFTER:  [2]  → [0] → [3]  → [1]
+
+void	assign_ranks(t_stack *a)
+{
+	t_node	*current;
+	int		*sorted;
+	int		i;
+
+	sorted = get_values(a);
+	sort_array(sorted, a->size);
+	current = a->top;
+	while (current)
+	{
+		current->value = find_rank(sorted, a->size, current->value);
+		current = current->next;
+	}
+	free(sorted);
+}
+
+//	Just gets the value of max
+
+int	find_max(t_stack *a)
+{
+	t_node	*current;
+	int		max;
+
+	current = a->top;
+	max = current->value;
+	while (current)
+	{
+		if (current->value > max)
+			max = current->value;
+		current = current->next;
+	}
+	return (max);
+}
+
+//	Just finds the number position on the node of the highest number
+
+int	find_max_pos(t_stack *a)
+{
+	t_node	*current;
+	int		max;
+	int		pos;
+	int		max_pos;
+
+	current = a->top;
+	max = find_max(a);
+	pos = 0;
+	max_pos = 0;
+	while (current)
+	{
+		if (current->value == max)
+			max_pos = pos;
+		pos++;
+		current = current->next;
+	}
+	return (max_pos);
+}
+
+void	max_to_top(t_stack *a)
+{
+	int	pos;
+	int	max;
+
+	pos = find_max_pos(a);
+	max = find_max(a);
+	while (a->top->value != max)
+	{
+		if (pos <= a->size / 2)
+			ra(a);
+		else
+			rra(a);
+	}
+}
+
+//	Replaces all values for ranks
+//	BEFORE: [67] → [3] → [87] → [23]
+//	AFTER:  [2]  → [0] → [3]  → [1]
+//	chunck_size /5 cause the most optimal for 100/500 numbers
+//	Push all to B
+//	Checks if belongs to current chunk if yes psuh to b
+//	IF nojust ra, put in the final
+//	Go to next chunk
+//	Push largest number first back from b to , so it ends sorted
+
+void	chunk_sort(t_stack *a, t_stack *b)
+{
+	int	chunk_size;
+	int	chunk;
+	int	i;
+
+	assign_ranks(a);
+	chunk_size = a->size / 5;
+	chunk = 0;
+	while (a->size > 0)
+	{
+		i = a->size;
+		while (i--)
+		{
+			if (a->top->value >= chunk * chunk_size
+				&& a->top->value < (chunk + 1) * chunk_size)
+				pb(a, b);
+			else
+				ra(a);
+		}
+		chunk++;
+	}
+	while (b->size > 0)
+	{
+		max_to_top(b);
+		pa(a, b);
+	}
+}
+
+//----------------------------------------------------------------------
+//	Radix sort - O(n log n)
+
