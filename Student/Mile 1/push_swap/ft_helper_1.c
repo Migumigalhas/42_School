@@ -1,14 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_helper_1.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:08:07 by miggomes          #+#    #+#             */
-/*   Updated: 2026/06/25 12:21:57 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/07/03 16:21:45 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 int	ft_matoi(char *str)
 {
@@ -30,10 +32,10 @@ int	ft_matoi(char *str)
 
 long	ft_matol(char *str)
 {
-	long resultado;
-	long sinal;
-	int i;
-	
+	long	resultado;
+	long	sinal;
+	int		i;
+
 	i = 0;
 	sinal = 1;
 	resultado = 0;
@@ -49,4 +51,28 @@ long	ft_matol(char *str)
 		i++;
 	}
 	return (resultado * sinal);
+}
+
+void	free_stack(t_stack *a)
+{
+	t_node	*current;
+	t_node	*next;
+
+	current = a->top;
+	while (current)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+	a->top = NULL;
+	a->size = 0;
+}
+
+void	error_exit(t_stack *a, t_stack *b)
+{
+	free_stack(a);
+	free_stack(b);
+	write(2, "Error\n", 6);
+	exit(1);
 }

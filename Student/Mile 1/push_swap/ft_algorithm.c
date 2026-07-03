@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 15:50:22 by miggomes          #+#    #+#             */
-/*   Updated: 2026/06/26 16:39:06 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/07/03 16:20:14 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -354,3 +354,31 @@ void	chunk_sort(t_stack *a, t_stack *b)
 //----------------------------------------------------------------------
 //	Radix sort - O(n log n)
 
+void	radix_sort(t_stack *a, t_stack *b)
+{
+	int	bits;
+	int	bit;
+	int	i;
+	int	size;
+
+	assign_ranks(a);
+	size = a->size;
+	bits = 0;
+	while ((size - 1) >> bits)
+		bits++;
+	bit = 0;
+	while (bit < bits)
+	{
+		i = size;
+		while (i--)
+		{
+			if ((a->top->value >> bit) & 1)
+				pb(a, b);
+			else
+				ra(a);
+		}
+		while (b->size > 0)
+			pa(a, b);
+		bit++;
+	}
+}
