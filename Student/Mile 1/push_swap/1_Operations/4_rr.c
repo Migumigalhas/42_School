@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_swap.c                                     :+:      :+:    :+:   */
+/*   4_rr.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/23 15:50:26 by miggomes          #+#    #+#             */
-/*   Updated: 2026/07/03 16:18:43 by miggomes         ###   ########.fr       */
+/*   Created: 2026/07/05 17:15:30 by miggomes          #+#    #+#             */
+/*   Updated: 2026/07/05 17:17:06 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	rra(t_stack *a)
 {
-	t_stack	a;
-	t_stack	b;
-	long	n;
-	int		i;
+	rr_helper(a);
+	write(1, "rra\n", 4);
+}
 
-	if (argc < 2)
-		return (0);
-	init_stack(&a);
-	init_stack(&b);
-	i = 1;
-	if (argv[1][0] == '-' && argv[1][1] == '-')
-		i = 2;
-	while (i < argc)
-	{
-		validate(argv, i, &a, &b);
-		i++;
-	}
-	if (!sort_check(&a))
-		flag_parsing(argv, &a, &b);
-	free_stack(&a);
-	free_stack(&b);
-	return (0);
+void	rrb(t_stack *b)
+{
+	rr_helper(b);
+	write(1, "rrb\n", 4);
+}
+
+void	rrr(t_stack *a, t_stack *b)
+{
+	rr_helper(a);
+	rr_helper(b);
+	write(1, "rrr\n", 4);
 }

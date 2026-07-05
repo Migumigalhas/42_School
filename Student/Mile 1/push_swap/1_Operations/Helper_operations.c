@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*   Helper_operations.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/23 12:52:26 by miggomes          #+#    #+#             */
-/*   Updated: 2026/06/24 16:28:37 by miggomes         ###   ########.fr       */
+/*   Created: 2026/07/05 17:15:32 by miggomes          #+#    #+#             */
+/*   Updated: 2026/07/05 17:36:44 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,77 +94,4 @@ void	rr_helper(t_stack *rr)
 	last->next = first;
 	rr->top = last;
 	beforelast->next = NULL;
-}
-
-void	sa(t_stack *a)
-{
-	s_helper(a);
-	ft_printf("sa\n");
-}
-
-void	sb(t_stack *b)
-{
-	s_helper(b);
-	ft_printf("sb\n");
-}
-
-void	ss(t_stack *a, t_stack *b)
-{
-	sa(a);
-	sb(b);
-	ft_printf("ss\n");
-}
-
-void	pa(t_stack *a, t_stack *b)
-{
-	if (!b->top)
-		return ;
-	push(a, pop(b));
-	ft_printf("pa\n");
-}
-
-void	pb(t_stack *a, t_stack *b)
-{
-	if (!a->top)
-		return ;
-	push(b, pop(a));
-	ft_printf("pb\n");
-}
-
-void	ra(t_stack *a)
-{
-	r_helper(a);
-	ft_printf("ra\n");
-}
-
-void	rb(t_stack *b)
-{
-	r_helper(b);
-	ft_printf("rb\n");
-}
-
-void	rr(t_stack *a, t_stack *b)
-{
-	r_helper(a);
-	r_helper(b);
-	ft_printf("rr\n");
-}
-
-void	rra(t_stack *a)
-{
-	rr_helper(a);
-	ft_printf("rra\n");
-}
-
-void	rrb(t_stack *b)
-{
-	rr_helper(b);
-	ft_printf("rrb\n");
-}
-
-void	rrr(t_stack *a, t_stack *b)
-{
-	rr_helper(a);
-	rr_helper(b);
-	ft_printf("rrr\n");
 }
