@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 17:25:34 by miggomes          #+#    #+#             */
-/*   Updated: 2026/07/05 17:36:58 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/07/06 13:06:46 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,18 @@ void	min_to_top_new(t_stack *a)
 			ra(a);
 		else
 			rra(a);
+	}
+}
+
+void	restore_values(t_stack *a, int *original, int size)
+{
+	t_node	*current;
+
+	sort_array(original, size);
+	current = a->top;
+	while (current)
+	{
+		current->value = original[current->value];
+		current = current->next;
 	}
 }

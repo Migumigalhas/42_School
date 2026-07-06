@@ -6,7 +6,7 @@
 #    By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/23 12:16:28 by miggomes          #+#    #+#              #
-#    Updated: 2026/07/05 17:43:53 by miggomes         ###   ########.fr        #
+#    Updated: 2026/07/06 12:31:10 by miggomes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ FUNCTIONS	= 1_Operations/1_s.c \
        2_Algorythms/Helper_algorythms_1.c \
        2_Algorythms/Helper_algorythms_2.c \
        2_Algorythms/Helper_algorythms_3.c \
-       3_Selective_functions/ft_benchmark.c \
        3_Selective_functions/ft_disorder_measure.c \
        3_Selective_functions/ft_flag_parsing.c \
        3_Selective_functions/ft_free_memmory.c \

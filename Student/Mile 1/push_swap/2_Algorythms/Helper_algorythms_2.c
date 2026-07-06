@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 17:31:28 by miggomes          #+#    #+#             */
-/*   Updated: 2026/07/05 18:37:29 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/07/06 12:38:17 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	*get_values(t_stack *a)
 		return (NULL);
 	current = a->top;
 	i = 0;
-	while (current->next == NULL)
+	while (current != NULL)
 	{
 		array[i] = current->value;
 		current = current->next;

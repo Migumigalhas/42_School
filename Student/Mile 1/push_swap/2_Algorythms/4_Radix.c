@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 17:30:05 by miggomes          #+#    #+#             */
-/*   Updated: 2026/07/05 17:36:55 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/07/06 13:11:20 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ void	radix_sort(t_stack *a, t_stack *b)
 	int	bit;
 	int	i;
 	int	size;
+	int	*original;
 
+	original = get_values(a);
 	assign_ranks(a);
 	size = a->size;
 	bits = 0;
@@ -33,12 +35,14 @@ void	radix_sort(t_stack *a, t_stack *b)
 		while (i--)
 		{
 			if ((a->top->value >> bit) & 1)
-				pb(a, b);
-			else
 				ra(a);
+			else
+				pb(a, b);
 		}
 		while (b->size > 0)
 			pa(a, b);
 		bit++;
 	}
+	restore_values(a, original, size);
+	free(original);
 }
