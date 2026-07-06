@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 17:29:10 by miggomes          #+#    #+#             */
-/*   Updated: 2026/07/06 16:00:46 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/07/06 16:15:37 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,43 @@ static int	get_chunk_count(int size)
 	return (11);
 }
 
+static int	calc_chunk_size(int size)
+{
+	int	chunks;
+
+	chunks = get_chunk_count(size);
+	if (size / chunks == 0)
+		return (1);
+	return (size / chunks);
+}
+
 void	chunk_sort(t_stack *a, t_stack *b)
+{
+	int	chunk_size;
+	int	i;
+
+	assign_ranks(a);
+	chunk_size = calc_chunk_size(a->size);
+	i = 0;
+	while (a->size > 0)
+	{
+		if (a->top->value <= i++)
+			pb(a, b);
+		else if (a->top->value <= (i - 1) + chunk_size)
+		{
+			pb(a, b);
+			rb(b);
+		}
+		else
+		{
+			ra(a);
+			i--;
+		}
+	}
+	pull_back(a, b);
+}
+
+/* void	chunk_sort(t_stack *a, t_stack *b)
 {
 	int	total_size;
 	int	chunks;
@@ -63,4 +99,4 @@ void	chunk_sort(t_stack *a, t_stack *b)
 			ra(a);
 	}
 	pull_back(a, b);
-}
+} */
