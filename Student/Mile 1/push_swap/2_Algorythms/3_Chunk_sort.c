@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 17:29:10 by miggomes          #+#    #+#             */
-/*   Updated: 2026/07/05 18:37:49 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/07/06 16:00:46 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,28 +23,44 @@
 //	Go to next chunk
 //	Push largest number first back from b to , so it ends sorted
 
-//FIXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+static int	get_chunk_count(int size)
+{
+	if (size <= 20)
+		return (2);
+	if (size <= 100)
+		return (5);
+	return (11);
+}
 
 void	chunk_sort(t_stack *a, t_stack *b)
 {
+	int	total_size;
+	int	chunks;
 	int	chunk_size;
-	int	chunk;
-	int	size;
+	int	i;
 
 	assign_ranks(a);
-	size = a->size;
-	chunk_size = a->size / 5;
+	total_size = a->size;
+	chunks = get_chunk_count(total_size);
+	chunk_size = total_size / chunks;
 	if (chunk_size == 0)
 		chunk_size = 1;
-	chunk = 0;
+	i = 0;
 	while (a->size > 0)
 	{
-		push_chunk(a, b, chunk, chunk_size);
-		chunk++;
+		if (a->top->value <= i)
+		{
+			pb(a, b);
+			i++;
+		}
+		else if (a->top->value <= i + chunk_size)
+		{
+			pb(a, b);
+			rb(b);
+			i++;
+		}
+		else
+			ra(a);
 	}
-	while (b->size > 0)
-	{
-		max_to_top(b);
-		pa(a, b);
-	}
+	pull_back(a, b);
 }

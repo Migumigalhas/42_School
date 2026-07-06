@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 17:31:28 by miggomes          #+#    #+#             */
-/*   Updated: 2026/07/06 12:38:17 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/07/06 15:31:54 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,6 @@ void	assign_ranks(t_stack *a)
 	}
 	free(sorted);
 }
-
-//	FIXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 void	pull_back(t_stack *a, t_stack *b)
 {

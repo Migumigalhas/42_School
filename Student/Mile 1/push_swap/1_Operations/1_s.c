@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 17:15:25 by miggomes          #+#    #+#             */
-/*   Updated: 2026/07/05 17:36:37 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/07/06 15:12:55 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	sb(t_stack *b)
 
 void	ss(t_stack *a, t_stack *b)
 {
-	sa(a);
-	sb(b);
+	s_helper(a);
+	s_helper(b);
 	write(1, "ss\n", 3);
 }

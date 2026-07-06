@@ -6,7 +6,7 @@
 /*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 12:20:24 by miggomes          #+#    #+#             */
-/*   Updated: 2026/07/06 13:02:37 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/07/06 16:01:53 by miggomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,7 @@ void				sort_array(int *array, int size);
 int					*get_values(t_stack *a);
 int					find_rank(int *sorted, int size, int value);
 void				assign_ranks(t_stack *a);
-
 void				pull_back(t_stack *a, t_stack *b);
-int					in_chunk(int value, int chunk, int chunk_size, int size);
-void				push_chunk(t_stack *a, t_stack *b, int chunk,
-						int chunk_size);
-
 int					find_max(t_stack *a);
 int					find_max_pos(t_stack *a);
 void				max_to_top(t_stack *a);
