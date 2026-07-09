@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   1_s.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nuelblin <nuelblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 17:15:25 by miggomes          #+#    #+#             */
-/*   Updated: 2026/07/06 15:12:55 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/07/08 18:50:58 by nuelblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 void	sa(t_stack *a)
 {
 	s_helper(a);
+	if (a->bench && a->bench->is_active)
+		a->bench->sa++;
 	write(1, "sa\n", 3);
 }
 
 void	sb(t_stack *b)
 {
 	s_helper(b);
+	if (b->bench && b->bench->is_active)
+		b->bench->sb++;
 	write(1, "sb\n", 3);
 }
 
@@ -28,5 +32,7 @@ void	ss(t_stack *a, t_stack *b)
 {
 	s_helper(a);
 	s_helper(b);
+	if (a->bench && a->bench->is_active)
+		a->bench->ss++;
 	write(1, "ss\n", 3);
 }

@@ -1,44 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_helper_2.c                                      :+:      :+:    :+:   */
+/*   Helper_main_2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nuelblin <nuelblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 15:50:18 by miggomes          #+#    #+#             */
-/*   Updated: 2026/07/05 17:06:19 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/07/08 19:03:49 by nuelblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//	Convert str to long using matol
-//	ft_matoi cheacks if it is an valid integer,
-//	n... if is outside the int range, and ft_dup if is dupped
-//	Type cast long into int ..., (int)n))
-//	If all passed push back to a
+static void	process_split(char **split, t_stack *a, t_stack *b)
+{
+	int		k;
+	long	n;
+
+	k = 0;
+	while (split[k])
+		k++;
+	while (--k >= 0)
+	{
+		n = ft_matol(split[k]);
+		if (!ft_matoi(split[k]) || n > 2147483647 || n < -2147483648
+			|| ft_duplicate(a, (int)n))
+		{
+			free_split(split);
+			error_exit(a, b);
+		}
+		push(a, (int)n);
+	}
+}
 
 void	validate(char **argv, int i, t_stack *a, t_stack *b)
 {
-	long	n;
+	char	**split;
 
-	n = ft_matol(argv[i]);
-	if (!ft_matoi(argv[i]) || n > 2147483647 || n < -2147483648
-		|| ft_duplicate(a, (int)n))
+	split = ft_split(argv[i], ' ');
+	if (!split || !split[0])
+	{
+		free_split(split);
 		error_exit(a, b);
-	push(a, (int)n);
+	}
+	process_split(split, a, b);
+	free_split(split);
 }
-
-// Start in the top of the node
-// Increment until we find 2 similar values
-// value = 5
-// stack: [3] → [1] → [4] → NULL
-
-// current = [3] → 3 == 5? NO
-// current = [1] → 1 == 5? NO
-// current = [4] → 4 == 5? NO
-// current = NULL → loop ends
-// return (0)  no duplicate!
 
 int	ft_duplicate(t_stack *a, int value)
 {
@@ -53,10 +60,6 @@ int	ft_duplicate(t_stack *a, int value)
 	}
 	return (0);
 }
-
-//	If stack = null, 0, 1 ordenada, retorna 1
-// 	while current->next != \0 ++,
-//	Compare values and go to next node
 
 int	sort_check(t_stack *a)
 {

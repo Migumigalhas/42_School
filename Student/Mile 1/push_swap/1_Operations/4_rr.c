@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   4_rr.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miggomes <miggomes@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nuelblin <nuelblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 17:15:30 by miggomes          #+#    #+#             */
-/*   Updated: 2026/07/05 17:17:06 by miggomes         ###   ########.fr       */
+/*   Updated: 2026/07/08 18:50:45 by nuelblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 void	rra(t_stack *a)
 {
 	rr_helper(a);
+	if (a->bench && a->bench->is_active)
+		a->bench->rra++;
 	write(1, "rra\n", 4);
 }
 
 void	rrb(t_stack *b)
 {
 	rr_helper(b);
+	if (b->bench && b->bench->is_active)
+		b->bench->rrb++;
 	write(1, "rrb\n", 4);
 }
 
@@ -28,5 +32,7 @@ void	rrr(t_stack *a, t_stack *b)
 {
 	rr_helper(a);
 	rr_helper(b);
+	if (a->bench && a->bench->is_active)
+		a->bench->rrr++;
 	write(1, "rrr\n", 4);
 }
